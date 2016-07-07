@@ -20,11 +20,12 @@ public class CustomSwipeRefreshLayout extends SwipeRefreshLayout {
     private boolean isLoading = false;
 
     public CustomSwipeRefreshLayout(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public CustomSwipeRefreshLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+        //系统所能识别出的被认为是滑动的最小距离
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
@@ -33,8 +34,7 @@ public class CustomSwipeRefreshLayout extends SwipeRefreshLayout {
         mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                switch (scrollState)
-                {
+                switch (scrollState) {
                     case SCROLL_STATE_FLING:
                         break;
                     case SCROLL_STATE_IDLE:
@@ -55,8 +55,7 @@ public class CustomSwipeRefreshLayout extends SwipeRefreshLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         final int action = ev.getAction();
-        switch (action)
-        {
+        switch (action) {
             case MotionEvent.ACTION_DOWN:
                 firstTouchY = ev.getRawY();
                 break;
@@ -114,6 +113,6 @@ public class CustomSwipeRefreshLayout extends SwipeRefreshLayout {
     }
 
     public interface OnLoadListener {
-        public void onLoad();
+        void onLoad();
     }
 }
