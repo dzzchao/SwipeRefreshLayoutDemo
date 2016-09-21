@@ -3,7 +3,6 @@ package com.dzzchao.swiperefreshlayoutdemo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -92,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
     }
 
     /**
@@ -108,12 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 mListAdapter.notifyDataSetChanged();
                 textMore.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
-                Snackbar.make(coordinatorLayout, "下拉刷新完毕", Snackbar.LENGTH_SHORT).setAction("点我", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "点我干嘛", Toast.LENGTH_LONG).show();
-                    }
-                }).show();
+                Toast.makeText(MainActivity.this, "下拉刷新", Toast.LENGTH_SHORT).show();
             }
         }, 1000);
     }

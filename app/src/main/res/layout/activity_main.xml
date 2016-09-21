@@ -18,12 +18,4 @@
 
     </com.dzzchao.swiperefreshlayoutdemo.view.CustomSwipeRefreshLayout>
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_alignParentBottom="true"
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.design.widget.CoordinatorLayout>
-
 </RelativeLayout>
